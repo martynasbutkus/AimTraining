@@ -7,8 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio autoplay>
-        <source src="audio.mp3" type="audio/mp3">
+    <div id="options">
+        <label class="switch" for="musicCheckbox">
+            <input type="checkbox" id="musicCheckbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <audio loop id="thememusic">
+        <source src="audio.mp3">
     </audio>
     <div class="menu">
         <div class="menu-1 buttons">
@@ -37,7 +43,7 @@
     <!-- AIM TRAINING -->
     <div class="tab" id="aim-training">
         <div class="aim-training-middle">
-            <div id="timer">Time: 5s</div>
+            <div id="timer">Time:</div>
             <div id="score">Score: 0</div>
         </div>
     </div>
