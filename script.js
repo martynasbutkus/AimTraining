@@ -2,6 +2,8 @@ const thememusic = document.getElementById("thememusic")
 thememusic.volume = 0.1
 const shot = document.getElementById("shot")
 shot.volume = 0.2
+const shotmiss = document.getElementById("shotmiss");
+shotmiss.volume = 0.1
 
 document.addEventListener("DOMContentLoaded", function() {
     const musicCheckbox = document.getElementById("musicCheckbox")
@@ -69,6 +71,12 @@ class AimTraining {
             this.updateScore()
             setTimeout(() => this.createDot(), 1)
             shot.play()
+        })
+        document.body.addEventListener("click", (event) => {
+            if (event.target !== this.dot) {
+                const shotmiss = document.getElementById("shotmiss")
+                shotmiss.play()
+            }
         })
         document.body.appendChild(this.dot)
     }
