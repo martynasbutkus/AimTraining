@@ -1,10 +1,13 @@
-const theme = document.querySelector("audio")
-theme.volume = 0.1
+const thememusic = document.getElementById("thememusic")
+thememusic.volume = 0.1
+const shot = document.getElementById("shot")
+shot.volume = 0.2
 
 document.addEventListener("DOMContentLoaded", function() {
     const musicCheckbox = document.getElementById("musicCheckbox")
     const thememusic = document.getElementById("thememusic")
     const musicPreference = localStorage.getItem("musicPreference")
+
     if (musicPreference === null || musicPreference === "true") {
         thememusic.play()
         musicCheckbox.checked = true
@@ -60,10 +63,12 @@ class AimTraining {
         this.dot.style.left = Math.random() * maxWidth + "px"
         this.dot.style.top = Math.random() * maxHeight + "px"
         this.dot.addEventListener("click", () => {
+            const shot = document.getElementById("shot")
             this.dot.remove()
             this.score++
             this.updateScore()
             setTimeout(() => this.createDot(), 1)
+            shot.play()
         })
         document.body.appendChild(this.dot)
     }
