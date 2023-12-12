@@ -1,17 +1,6 @@
 let vid = document.querySelector("audio")
 vid.volume = 0.1
-var audio = document.getElementById("audioElement");
-var audioButton = document.getElementById("audioButton");
 
-function toggleAudio() {
-    if (audio.paused) {
-        audio.play();
-        audioButton.innerHTML = "#";
-    } else {
-        audio.pause();
-        audioButton.innerHTML = "Play Audio";
-    }
-}
 class AimTraining {
     constructor() {
         this.tabs = document.getElementsByClassName("tab");
@@ -104,4 +93,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("aim").addEventListener("click", () => aimTraining.initialize());
 });
-
