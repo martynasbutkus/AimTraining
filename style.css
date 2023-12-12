@@ -11,6 +11,11 @@ body {
 	display: flex;
 	gap: 70px;
 }
+#audioButton{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
 .dot {
     position: absolute;
     width: 20px;
