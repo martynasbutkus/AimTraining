@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AimTraining</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio autoplay>
+        <source src="audio.mp3" type="audio/mp3">
+    </audio>
+    <div class="menu">
+        <div class="menu-1 buttons">
+            <button class="button" id="aim">
+                Aim Training
+                <div class="button__horizontal"></div>
+                <div class="button__vertical"></div>
+            </button>
+        </div>
+        <div class="menu-2 buttons" id="baricade">
+            <button class="button">
+                Baricade Training
+                <div class="button__horizontal"></div>
+                <div class="button__vertical"></div>
+            </button>
+        </div>
+        <div class="menu-3 buttons">
+            <button class="button">
+                Reaction Test
+                <div class="button__horizontal"></div>
+                <div class="button__vertical"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- AIM TRAINING -->
+    <div class="tab" id="aim-training">
+        <div class="aim-training-middle">
+            <div id="timer">Time: 5s</div>
+            <div id="score">Score: 0</div>
+        </div>
+    </div>
+    <!-- Baricade training -->
+    <div class="tab" id="baricade-training">
+        Baricade-training
+    </div>
+    <!-- Reaction Test -->
+    <div class="tab" id="reaction-test">
+        Reaction-test
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
