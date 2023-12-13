@@ -93,6 +93,12 @@ input:checked + .slider:before {
     font-size: 30px;
     color: #43d2e5;
 }
+#highest {
+    position: relative;
+    top: -350px;
+    font-size: 30px;
+    color: #43d2e5;
+}
 .button {
     --offset: 10px;
     --border-size: 2px;
