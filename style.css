@@ -85,22 +85,20 @@ input:checked + .slider:before {
     background-color: white;
     border-radius: 50%;
 }
+#aim-training{
+ position: absolute;
+ top: 20px;
+}
 #score {
-    position: relative;
-    top: -350px;
     font-size: 30px;
     color: #43d2e5;
 }
 
 #timer {
-    position: relative;
-    top: -350px;
     font-size: 30px;
     color: #43d2e5;
 }
 #highest {
-    position: relative;
-    top: -350px;
     font-size: 30px;
     color: #43d2e5;
 }
