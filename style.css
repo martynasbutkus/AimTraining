@@ -87,13 +87,14 @@ input:checked + .slider:before {
     animation: dotAnimation 4s ease-in-out forwards;
 }
 @keyframes dotAnimation {
-    0%,150% {
+    0%, 100% {
         transform: scale(0.5);
     }
     50% {
-        transform: scale(2);
+        transform: scale(1);
     }
 }
+
 #aim-training{
  position: absolute;
  display: flex;
