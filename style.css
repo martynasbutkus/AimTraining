@@ -84,9 +84,20 @@ input:checked + .slider:before {
     height: 20px;
     background-color: white;
     border-radius: 50%;
+    animation: dotAnimation 4s ease-in-out forwards;
+}
+@keyframes dotAnimation {
+    0%,150% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(2);
+    }
 }
 #aim-training{
  position: absolute;
+ display: flex;
+ text-align: center;
  top: 20px;
 }
 #score {
