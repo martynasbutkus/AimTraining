@@ -1,8 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 800px;
+    height: 90vh;
     background: rgb(0,212,255);
     background: radial-gradient(circle, rgba(0,212,255,0.731566011235955) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 8%, rgba(2,0,36,1) 61%, rgba(0,212,255,1) 77%, rgba(0,0,0,1) 88%);
     cursor: crosshair;
@@ -100,6 +105,7 @@ input:checked + .slider:before {
     color: #43d2e5;
 }
 .button {
+    text-decoration: none;
     --offset: 10px;
     --border-size: 2px;
     display: block;

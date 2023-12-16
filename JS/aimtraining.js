@@ -23,12 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("musicPreference", musicCheckbox.checked);
     });
 });
-
 class AimTraining {
     constructor() {
         this.tabs = document.getElementsByClassName("tab");
         this.buttonsContainer = document.querySelector(".menu");
-        this.buttons = document.querySelectorAll("button");
+        this.buttons = document.querySelectorAll("a");
         this.score = 0;
         this.timer = 5;
         this.dot;
@@ -42,7 +41,6 @@ class AimTraining {
             });
         });
     }
-
     changeTab(id, event) {
         for (const tab of this.tabs) {
             tab.style.display = "none";
@@ -76,8 +74,8 @@ class AimTraining {
         this.dot.className = "dot";
         const maxWidth = window.innerWidth - 20;
         const maxHeight = window.innerHeight - 20;
-        this.dot.style.left = Math.random() * maxWidth + "px";
-        this.dot.style.top = Math.random() * maxHeight + "px";
+        this.dot.style.left = Math.random() * (maxWidth - 150) + "px";
+        this.dot.style.top = Math.random() * (maxHeight - 150) + "px";
         this.dot.addEventListener("click", () => {
             const shot = document.getElementById("shot");
             this.dot.remove();
