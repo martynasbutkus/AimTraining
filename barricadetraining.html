@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AimTraining</title>
+    <title>Barricade Training</title>
     <link rel="stylesheet" href="app/css/style.css">
 </head>
 <body>
@@ -18,29 +18,30 @@
     <audio loop id="thememusic">
         <source src="audio/audio.mp3">
     </audio>
+        <!-- AIM TRAINING -->
+        <div class="tab" id="aim-training">
+            <div class="aim-training-middle">
+                <div id="timer"></div>
+                <div id="score"></div>
+                <div id="highest"></div>
+            </div>
+        </div>
     <div class="menu">
         <div class="menu-1 buttons">
-            <a class="button" id="aim" href="aimtraining.html">
-                Aim Training
+            <a class="button" id="aim">
+                START
                 <div class="button__horizontal"></div>
                 <div class="button__vertical"></div>
             </a>
         </div>
         <div class="menu-2 buttons">
-            <a class="button" id="baricade" href="barricadetraining.html">
-                Barricade Training
-                <div class="button__horizontal"></div>
-                <div class="button__vertical"></div>
-            </a>
-        </div>
-        <div class="menu-3 buttons">
-            <a class="button" id="reaction" href="reaction.html">
-                Reaction Test
+            <a class="button" href="index.html">
+                Go back
                 <div class="button__horizontal"></div>
                 <div class="button__vertical"></div>
             </a>
         </div>
     </div>
-    <script src="JavaScript/script.js"></script>
+    <script src="JavaScript/barricadetraining.js"></script>
 </body>
 </html>

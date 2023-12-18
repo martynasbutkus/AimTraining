@@ -195,4 +195,12 @@
   .button:hover .button__vertical {
     transform: scaleY(0);
   }
-  
+  .soldier {
+    position:absolute;
+    width: 75px;
+    height: 75px;
+    background-image: url(../images/soldier1.png);
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+  }
