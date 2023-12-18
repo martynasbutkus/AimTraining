@@ -72,10 +72,10 @@ class AimTraining {
     createDot() {
         this.dot = document.createElement("div");
         this.dot.className = "dot";
-        const maxWidth = window.innerWidth - 20;
-        const maxHeight = window.innerHeight - 20;
-        this.dot.style.left = Math.random() * (maxWidth - 150) + "px";
-        this.dot.style.top = Math.random() * (maxHeight - 150) + "px";
+        const maxWidth = window.innerWidth - 50;
+        const maxHeight = window.innerHeight - 50;
+        this.dot.style.left = Math.random() * (maxWidth) + "px";
+        this.dot.style.top = Math.random() * (maxHeight) + "px";
         this.dot.addEventListener("click", () => {
             const shot = document.getElementById("shot");
             this.dot.remove();

@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body {
+  }
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,26 +11,26 @@ body {
     background: rgb(0,212,255);
     background: radial-gradient(circle, rgba(0,212,255,0.731566011235955) 0%, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 8%, rgba(2,0,36,1) 61%, rgba(0,212,255,1) 77%, rgba(0,0,0,1) 88%);
     cursor: crosshair;
-}
-#options{
+  }
+  #options{
     position: fixed;
     top: 10px;
     left: 10px;
-}
-.switch {
+  }
+  .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
-}
-
-.switch input { 
+  }
+  
+  .switch input { 
   opacity: 0;
   width: 0;
   height: 0;
-}
-
-.slider {
+  }
+  
+  .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -41,9 +41,9 @@ body {
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;
-}
-
-.slider:before {
+  }
+  
+  .slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -54,67 +54,67 @@ body {
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%;
-}
-
-input:checked + .slider {
+  }
+  
+  input:checked + .slider {
   background-color: #00D2FC;
-}
-
-input:focus + .slider {
+  }
+  
+  input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
+  }
+  
+  input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-}
-.menu{
-	display: flex;
-	gap: 70px;
-}
-#audioButton{
+  }
+  .menu{
+  display: flex;
+  gap: 70px;
+  }
+  #audioButton{
     position: fixed;
     top: 10px;
     right: 10px;
-}
-.dot {
+  }
+  .dot {
     position:absolute;
     width: 20px;
     height: 20px;
     background-color: white;
     border-radius: 50%;
     animation: dotAnimation 4s ease-in-out forwards;
-}
-@keyframes dotAnimation {
+  }
+  @keyframes dotAnimation {
     0%, 100% {
         transform: scale(0.5);
     }
     50% {
         transform: scale(1);
     }
-}
-
-#aim-training{
- position: absolute;
- display: flex;
- text-align: center;
- top: 20px;
-}
-#score {
+  }
+  
+  #aim-training{
+  position: absolute;
+  display: flex;
+  text-align: center;
+  top: 20px;
+  }
+  #score {
     font-size: 30px;
     color: #43d2e5;
-}
-
-#timer {
+  }
+  
+  #timer {
     font-size: 30px;
     color: #43d2e5;
-}
-#highest {
+  }
+  #highest {
     font-size: 30px;
     color: #43d2e5;
-}
-.button {
+  }
+  .button {
     text-decoration: none;
     --offset: 10px;
     --border-size: 2px;
@@ -133,19 +133,19 @@ input:checked + .slider:before {
     border-radius: 0;
     box-shadow: inset 0 0 0 var(--border-size) currentcolor;
     transition: background .8s ease;
-}
-
-.tab{
+  }
+  
+  .tab{
     color: white;
     display: none;
-}
-
-.button:hover {
+  }
+  
+  .button:hover {
     background: rgba(100, 0, 0, .03);
-}
-
-.button__horizontal,
-.button__vertical {
+  }
+  
+  .button__horizontal,
+  .button__vertical {
     position: absolute;
     top: var(--horizontal-offset, 0);
     right: var(--vertical-offset, 0);
@@ -153,45 +153,46 @@ input:checked + .slider:before {
     left: var(--vertical-offset, 0);
     transition: transform .8s ease;
     will-change: transform;
-}
-
-.button__horizontal::before,
-.button__vertical::before {
+  }
+  
+  .button__horizontal::before,
+  .button__vertical::before {
     content: '';
     position: absolute;
     border: inherit;
-}
-
-.button__horizontal {
+  }
+  
+  .button__horizontal {
     --vertical-offset: calc(var(--offset) * -1);
     border-top: var(--border-size) solid currentcolor;
     border-bottom: var(--border-size) solid currentcolor;
-}
-
-.button__horizontal::before {
+  }
+  
+  .button__horizontal::before {
     top: calc(var(--vertical-offset) - var(--border-size));
     bottom: calc(var(--vertical-offset) - var(--border-size));
     left: calc(var(--vertical-offset) * -1);
     right: calc(var(--vertical-offset) * -1);
-}
-
-.button:hover .button__horizontal {
+  }
+  
+  .button:hover .button__horizontal {
     transform: scaleX(0);
-}
-
-.button__vertical {
+  }
+  
+  .button__vertical {
     --horizontal-offset: calc(var(--offset) * -1);
     border-left: var(--border-size) solid currentcolor;
     border-right: var(--border-size) solid currentcolor;
-}
-
-.button__vertical::before {
+  }
+  
+  .button__vertical::before {
     top: calc(var(--horizontal-offset) * -1);
     bottom: calc(var(--horizontal-offset) * -1);
     left: calc(var(--horizontal-offset) - var(--border-size));
     right: calc(var(--horizontal-offset) - var(--border-size));
-}
-
-.button:hover .button__vertical {
+  }
+  
+  .button:hover .button__vertical {
     transform: scaleY(0);
-}
+  }
+  
