@@ -104,15 +104,24 @@
   #score {
     font-size: 30px;
     color: #43d2e5;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
   }
   
   #timer {
     font-size: 30px;
     color: #43d2e5;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
   }
   #highest {
     font-size: 30px;
     color: #43d2e5;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
   }
   .button {
     text-decoration: none;
@@ -204,3 +213,48 @@
     padding: 0;
     margin: 0;
   }
+.leaderboard{
+  position: absolute;
+  top: 20px;
+  right: 200px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(61, 61, 61, 0.397);
+  padding: 10px;
+}
+
+.leaderboard span {
+  text-align: center;
+}
+
+.leaderboard-form{
+  position: absolute;
+  top: 150px;
+  height: 180px;
+  color: rgba(255, 255, 255, 0.671);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: rgba(39, 39, 39, 0.486);
+  border-radius: 20px;
+  padding: 20px;
+  gap: 20px;
+}
+.leaderboard-form input{
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  height: 40px;
+  width: 400px;
+  font-size: 1.5em;
+  border-radius: 40px;
+  background: #43d2e588;
+  color: white;
+  box-shadow: 0 0 5px 5px #43d2e588;
+}
+
+.leaderboard-form input::placeholder{
+  color: rgba(255, 255, 255, 0.527);
+}

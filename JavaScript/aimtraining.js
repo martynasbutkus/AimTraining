@@ -146,3 +146,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("aim").addEventListener("click", () => aimTraining.initialize());
 });
+
+const form = document.querySelector("form")
+const leaderboardSubmit = document.getElementById("leaderboard-submit")
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault(e)
+    if(!leaderboardSubmit.value) return
+    const newData = {
+        data: {
+            Leaderboard: leaderboardSubmit.value
+        }
+    }
+
+    fetch("https://api.apispreadsheets.com/data/kraPIkJ0vUF7B0Go/", {
+        method: "POST",
+        body: JSON.stringify(newData),
+    }).then(res =>{
+        if (res.status === 201){
+            // SUCCESS
+            alert("Success")
+        }
+        else{
+            // ERROR
+            alert("Error")
+        }
+    })
+})
