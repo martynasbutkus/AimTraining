@@ -134,7 +134,7 @@ class AimTraining {
     }
 
     initialize() {
-        this.timer = 5;
+        this.timer = 30;
         this.score = 0;
         this.updateScore();
         this.updateTimer();
