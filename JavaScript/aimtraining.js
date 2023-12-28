@@ -4,6 +4,9 @@ const shot = document.getElementById("shot")
 shot.volume = 0.2
 const shotmiss = document.getElementById("shotmiss")
 shotmiss.volume = 0.1
+const leaderboardSubmit = document.getElementById("leaderboard-submit")
+const form = document.querySelector("form")
+const leaderboardURL = "https://api.apispreadsheets.com/data/kraPIkJ0vUF7B0Go/"
 
 document.addEventListener("DOMContentLoaded", function() {
     const musicCheckbox = document.getElementById("musicCheckbox");
@@ -131,7 +134,7 @@ class AimTraining {
     }
 
     initialize() {
-        this.timer = 30;
+        this.timer = 5;
         this.score = 0;
         this.updateScore();
         this.updateTimer();
@@ -147,29 +150,55 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("aim").addEventListener("click", () => aimTraining.initialize());
 });
 
-const form = document.querySelector("form")
-const leaderboardSubmit = document.getElementById("leaderboard-submit")
+fetch(leaderboardURL, {
+    method: "GET"
+})
+    .then(resp => resp.json())
+    .then(data => {
+        const table = document.getElementById("leaderboard");
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault(e)
-    if(!leaderboardSubmit.value) return
-    const newData = {
-        data: {
-            Leaderboard: leaderboardSubmit.value
-        }
-    }
+        if (Array.isArray(data.data)) {
+            data.data.sort((a, b) => b.Leaderboard - a.Leaderboard);
+            const top10Data = data.data.slice(0, 10);
+            top10Data.forEach((x, index) => {
+                const newTr = table.insertRow(table.rows.length);
 
-    fetch("https://api.apispreadsheets.com/data/kraPIkJ0vUF7B0Go/", {
-        method: "POST",
-        body: JSON.stringify(newData),
-    }).then(res =>{
-        if (res.status === 201){
-            // SUCCESS
-            alert("Success")
-        }
-        else{
-            // ERROR
-            alert("Error")
+                const cell1 = newTr.insertCell(0);
+                const cell2 = newTr.insertCell(1);
+                cell1.textContent = `${index + 1}. ${x.nickname}`;
+                cell2.textContent = x.Leaderboard;
+            });
+        } else {
+            console.error('Data format is not as expected:', data);
         }
     })
-})
+    .catch(error => console.error('Error fetching data:', error));
+    
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(e)
+        if(!leaderboardSubmit.value) return
+        const newData = {
+            data: {
+                Leaderboard: this.score,
+                nickname: leaderboardSubmit.value
+            }
+        }
+        fetch(leaderboardURL, {
+            method: "POST",
+            body: JSON.stringify(newData),
+        })
+        .then(res => res.json())
+        .then(data => {
+            const LeaderboardData = data.Leaderboard
+            const leaderboardSize = 10
+            if(LeaderboardData.lenght < leaderboardSize || this.score > LeaderboardData[leaderboardSize - 1].Leaderboard){
+                const newEntry = {
+                    Leaderbord: this.score,
+                    nickname: leaderboardSubmit.value
+                }
+                LeaderboardData.push(newEntry)
+                LeaderboardData.sort((a, b) => b.leaderboard - a.leaderboard)
+                LeaderboardData.splice(leaderboardSize)
+            }
+        })
+    })

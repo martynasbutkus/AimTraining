@@ -213,7 +213,7 @@
     padding: 0;
     margin: 0;
   }
-.leaderboard{
+table{
   position: absolute;
   top: 20px;
   right: 200px;
@@ -221,7 +221,18 @@
   flex-direction: column;
   color: white;
   background-color: rgba(61, 61, 61, 0.397);
-  padding: 10px;
+  padding: 20px;
+  width: 260px;
+  border-collapse: collapse;
+}
+table th{
+  font-size: 30px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+}
+table td{
+  font-size: 23px;
+  padding-bottom: 15px;
 }
 
 .leaderboard span {
